@@ -7,6 +7,13 @@ W2. 실험3개 진행, 실험 로그 및 시각화, introduction & related work 
 W3. Ablation & 추가실험, Results & Analysis, Method(성능비교, 그래프 등) ~8.1
 W4. Abstract, Conclusion, Reference정리 ~8.8
 
+# data transformation
+- dataset: lexglue-icthr task a
+- property: text, label
+- conversion method: text to {context/evidence, claim}, label to {claim and label}
+- example:
+ (json sample) into then converted data sample***
+
 # Reference
   ### “Automated Fact-Checking in Dialogue: Are Specialized Models Needed?” Chamoun et al., EMNLP 2023 워크숍 논문
   Chamoun은 retrieval 방식만 수정
