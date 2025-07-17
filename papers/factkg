@@ -1,4 +1,6 @@
-# FACT-KG(2023) : 핵심은 두 가지. 1)KG evidence, 2)FactKG dataset, Recon model
+# FACT-KG(2023)
+
+핵심은 두 가지. 1)KG evidence, 2)FactKG dataset, Recon model
 
 - 기존 텍스트 기반 팩트 검증(Fact Verification) 방식은 **claim과 evidence 문장 간의 의미적 일치 여부**를 평가함. 하지만 이 논문은 **evidence로 일반 텍스트가 아닌 지식 그래프(Knowledge Graph, KG)** 를 사용.
 - 또한 주장을 검증하기 위한 **추론 경로(reasoning path)** 를 **명시적으로 제공**하고, **그래프 구조로 시각화**할 수 있어 **설명 가능한 추론(explainable reasoning)** 이 가능.
