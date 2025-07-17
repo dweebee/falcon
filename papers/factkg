@@ -17,8 +17,8 @@
   - `label`: 참(True) 또는 거짓(False)
   - `reasoning_paths`: KG 내에서 claim을 뒷받침하거나 반박하는 추론 경로들 (triple들의 순서열)
   - `triples`: claim과 관련된 KG triple들의 부분 그래프
-  - `entities`: claim에 포함된 주체/객체 entity들
-  - `relations`: 사용된 relation 종류들
+  - `entities`: claim에 포함된 주체/객체 entity들 ,,,How were they extracted?
+  - `relations`: 사용된 relation 종류들 ,,,evidence와 동일?
 
 - 데이터셋 구성 비율:
   - `train.json`: 전체 claim 중 약 70%
@@ -34,12 +34,12 @@
   - 자연어 claim
   - claim에 해당하는 KG 부분 그래프 (triples, entities)
 - 처리 단계:
-  - claim을 인코딩하여 KG 노드와 관계에 매핑
+  - claim을 인코딩하여 KG 노드와 관계에 매핑 (노드,엣지),,,How?
   - GNN 기반 구조에서 claim에 관련된 노드 쌍 간의 경로들을 탐색
-  - 경로 scoring: 여러 후보 경로 중 claim과 가장 일치하는 추론 경로를 추출
+  - 경로 scoring: 여러 후보 경로 중 claim과 가장 일치하는 추론 경로를 추출,,,How?
   - 최종 판별: 추론 경로 기반으로 claim이 KG 내 사실과 일치하는지 예측 (True / False)
 - 특징:
-  - 단순 노드 분류가 아니라, **경로 단위 추론(path-based reasoning)** 을 수행
+  - 단순 노드 분류가 아니라, **경로 단위 추론(path-based reasoning)** 을 수행 "key'
   - KG의 구조적 정보와 claim 간 의미적 연관성을 동시에 반영
 
 ---
