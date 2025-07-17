@@ -1,5 +1,7 @@
 # Automated FC in dialogue: Are specialized models needed? 
 
+한 마디로 정리하자면, 대화용 별도 모델이 없어도, retrieval과 입력 변환 전략만 적용하면 하나의 fact‑checking 모델로 standalone 및 dialogue 양쪽에서 고른 성능을 확보할 수 있음을 실증한 연구
+
 **핵심 기여**
   - 기존의 standalone 팩트체킹 모델은 대화 속 발언(claim)에 취약함을 확인.
   - 대화 데이터로 fine‑tuning 시 standalone 모델 성능 저하(catatrophic forgetting) 문제 발견.
