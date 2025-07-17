@@ -1,4 +1,4 @@
-# FACT-KG 논문요약 (2023)
+# FACT-KG(2023) : 핵심은 두 가지. 1)KG evidence, 2)FactKG dataset, Recon model
 
 - 기존 텍스트 기반 팩트 검증(Fact Verification) 방식은 **claim과 evidence 문장 간의 의미적 일치 여부**를 평가함. 하지만 이 논문은 **evidence로 일반 텍스트가 아닌 지식 그래프(Knowledge Graph, KG)** 를 사용.
 - 또한 주장을 검증하기 위한 **추론 경로(reasoning path)** 를 **명시적으로 제공**하고, **그래프 구조로 시각화**할 수 있어 **설명 가능한 추론(explainable reasoning)** 이 가능.
@@ -6,9 +6,7 @@
   - **FACT-KG 데이터셋**: Wikidata 기반으로 구축된 KG 기반 팩트 검증 벤치마크. 자연어 claim과 함께 정답 레이블 및 KG 기반 reasoning path 제공.
   - **ReCon 모델**: KG 상에서 claim에 부합하는 reasoning path를 탐색하고, 이를 기반으로 참/거짓을 예측하는 GNN 기반 모델.
 
----
-
-## FACT-KG 데이터셋 구성
+### FACT-KG 데이터셋 구성
 
 - **기반**: Wikidata Knowledge Graph
 - **목적**: claim에 대한 정답 레이블(True / False)을 **텍스트 없이도 KG 정보만으로 판단** 가능하도록 구성
@@ -26,9 +24,7 @@
   - `test.json`: 약 20%
   - 모든 split은 동일한 샘플 구조를 따름
 
----
-
-## ReCon 모델 요약 (Reasoning over Connections)
+### ReCon 모델? (Reasoning over Connections)
 
 - **입력**:
   - 자연어 claim
