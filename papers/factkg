@@ -1,0 +1,45 @@
+## FACT-KG 논문 핵심 요약 (2023)
+
+- 기존 텍스트 기반 팩트 검증과 달리, 이 논문은 **evidence로 일반 텍스트가 아닌 지식 그래프(Knowledge Graph, KG)** 를 사용함.
+- 주장을 검증하기 위한 추론 경로(Reasoning Path)를 **명시적으로 제공하고, 그래프 구조로 시각화할 수 있어 explainable reasoning이 가능**함.
+- 위 두 가지 핵심을 뒷받침하기 위해 다음 두 가지를 제안함:
+  - **FACT-KG 데이터셋**: Wikidata 기반으로 구축된 KG 팩트 검증용 벤치마크
+  - **ReCon 모델**: KG 위에서 reasoning path를 따라 추론하며 claim의 진위를 판별하는 GNN 기반 모델
+
+---
+
+## FACT-KG 데이터셋 구성
+
+- 기반: Wikidata Knowledge Graph
+- 목적: 자연어 claim에 대해 KG 구조만으로 True / False 판단
+- 각 샘플(Claim)의 구성 요소:
+  - `claim`: 자연어 문장 (e.g., "Obama was born in Hawaii.")
+  - `label`: 참(True) 또는 거짓(False)
+  - `reasoning_paths`: KG 내에서 claim을 뒷받침하거나 반박하는 추론 경로들 (triple들의 순서열)
+  - `triples`: claim과 관련된 KG triple들의 부분 그래프
+  - `entities`: claim에 포함된 주체/객체 entity들
+  - `relations`: 사용된 relation 종류들
+
+- 데이터셋 구성 비율:
+  - `train.json`: 전체 claim 중 약 70%
+  - `valid.json`: 약 10%
+  - `test.json`: 약 20%
+  - 각 split은 위와 같은 샘플 구조를 동일하게 가짐
+
+---
+
+## ReCon 모델 요약 (Reasoning over Connections)
+
+- 입력:
+  - 자연어 claim
+  - claim에 해당하는 KG 부분 그래프 (triples, entities)
+- 처리 단계:
+  - claim을 인코딩하여 KG 노드와 관계에 매핑
+  - GNN 기반 구조에서 claim에 관련된 노드 쌍 간의 경로들을 탐색
+  - 경로 scoring: 여러 후보 경로 중 claim과 가장 일치하는 추론 경로를 추출
+  - 최종 판별: 추론 경로 기반으로 claim이 KG 내 사실과 일치하는지 예측 (True / False)
+- 특징:
+  - 단순 노드 분류가 아니라, **경로 단위 추론(path-based reasoning)** 을 수행
+  - KG의 구조적 정보와 claim 간 의미적 연관성을 동시에 반영
+
+---
