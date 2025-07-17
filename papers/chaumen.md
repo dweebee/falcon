@@ -1,4 +1,4 @@
-- Automated FC in dialogue: Are specialized models needed? 
+# Automated FC in dialogue: Are specialized models needed? 
 
 **핵심 기여**
   - 기존의 standalone 팩트체킹 모델은 대화 속 발언(claim)에 취약함을 확인.
