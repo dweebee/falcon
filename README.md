@@ -28,6 +28,14 @@ W4. Abstract, Conclusion, Reference정리 ~8.8
 
 문맥 전처리/요약 기법은 1,2번 해결 기대. 이 요약기법이 실제 팩트체킹 성능을 향상시키는지 검증 필요하고, 요약의 최적 방식을 탐색하는 연구 진행필요. 
 
+# 실험 계획
+1. **전체 문맥 사용 Baseline**: 케이스의 모든 문단을 한 번에 입력하는 모델 (아마? hierarchical BERT)
+2. **문단 선별 기법**: 문단 임베딩 클러스터링 → 주장 관련 문단만 선택하여 NLI 판별
+3. **모델 선택**: LegalBERT 등 도메인 특화 모델 vs. LLM (예: Llama2) 비교
+4. **입력 구성 비교**: {대화 문맥+증거+주장} vs {문맥+주장} vs {증거+주장} (DialFact 설정)
+5. **평가지표**: (정확도, 매크로/마이크로 F1 등 )NLI 분류 성능 전반 평가
+6. **최종 목표**: 장문 맥락에서 핵심 근거 추출이 주장 검증 향상 (법률 도메인에서의 새로운 시도에 포커싱.)
+
 # Reference
   ### “Automated Fact-Checking in Dialogue: Are Specialized Models Needed?” Chamoun et al., EMNLP 2023 워크숍 논문
   Chamoun은 retrieval 방식만 수정
