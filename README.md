@@ -20,6 +20,14 @@ W4. Abstract, Conclusion, Reference정리 ~8.8
 			- text 값을 단순히 대화로 바꾸는 게 '대화 속 주장의 팩트체크 검증 성능향상' 입증을 위한 증명으로는 미약하지않을까....?
 	- turn level conversation 형태
 
+### LexGLUE icthr task a 데이터 후속연구 조사
+1. 긴 법률문서 처리 한계 -> text가 너무 김.
+2. 텍스트 내 핵심정보 식별 어려움 -> claim verification에 핵심적인 문맥 식별 필요함.
+3. 특수 도메인 언어 및 지식 격차
+4. 벤치마크의 언어적 제약 (국가별 법규 차이 존재, 다양한 법에 시도해 알고리즘의 기능 검증필요)
+
+문맥 전처리/요약 기법은 1,2번 해결 기대. 이 요약기법이 실제 팩트체킹 성능을 향상시키는지 검증 필요하고, 요약의 최적 방식을 탐색하는 연구 진행필요. 
+
 # Reference
   ### “Automated Fact-Checking in Dialogue: Are Specialized Models Needed?” Chamoun et al., EMNLP 2023 워크숍 논문
   Chamoun은 retrieval 방식만 수정
