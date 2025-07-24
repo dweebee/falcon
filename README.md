@@ -3,7 +3,7 @@ falcon project for 2025 NLLP
 
 # Timeline
 W1. ACL 논문구조 뼈대잡기, 관련 연구정리, 연구 질문 확정, 모델과 데이터 선정, 실험 디자인 초안 설계 ~7.19
-
+	- RQ1: 법률적 추론 구조에 기반하여 판결문의 문단들을 클러스터링하고, 이 중 주장과 밀접한 핵심 문단만을 선별하여 입력할 경우, 문서 전체를 사용할 때보다 팩트체크(주장 검증) 성능이 향상되는가?
 W2. 실험3개 진행, 실험 로그 및 시각화, introduction & related work 초안 ~7.25
 
 W3. Ablation & 추가실험, Results & Analysis, Method(성능비교, 그래프 등) ~8.1
