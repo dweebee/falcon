@@ -1,0 +1,6 @@
+{
+  "python.pythonPath": "/opt/miniconda3/envs/falcon-env/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "terminal.integrated.inheritEnv": true
+}
+
