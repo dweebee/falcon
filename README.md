@@ -3,7 +3,19 @@ falcon project for 2025 NLLP
 
 ---
 # checklist
-[] 
+### SOTA 케이스 조사
+[] LexGLUE ECtHR Task A로 사실검증한 논문이 최근 5년(2020~2025) 내  있는지?
+[] 최근 연구 중, 
+
+### LexGLUE ECtHR Task A 데이터 이해
+[] 레이블 정보 부록에 추가: (1) 가능한 레이블(위반 조항번호) 범위 10개의 정의; (2) 판사의 판결을 위한 요건사실 정리
+[] 각 샘플의 경우의 수: (1) 레이블 1개(위반한 조항이 딱 하나!); (2) 레이블 2개; (3) 레이블 빈 리스트(: 이는 
+
+### 관련 모델 이해: LegalBERT, Llama3
+
+### 전처리
+[] LexGLUE 데이터를 대화 내 주장검증용 NLI용으로 데이터 변환: {text, label} to {context, claim, label}
+[] Supported에 해당하는 claim 후보 다섯 문장 선정
 
 
 ---
