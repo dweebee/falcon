@@ -4,7 +4,7 @@ falcon project for 2025 NLLP
 ---
 # checklist
 ### SOTA 케이스 조사
-[] LexGLUE ECtHR Task A로 사실검증한 논문이 최근 5년(2020~2025) 내  있는지?
+[] LexGLUE ECtHR Task A로 사실검증한 논문이 최근 5년(2020~2025) 내  있는지? </br>
 [] 최근 연구 중, 
 
 ### LexGLUE ECtHR Task A 데이터 이해
