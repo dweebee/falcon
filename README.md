@@ -108,13 +108,13 @@
   (요약 문장 **사실성 평가**를 위한 그래프 기반 접근; 관련 아이디어 조사 예정)
 
 - gupta-etal-2022-dialfact
--    LexGLUE를 DialFact 형식으로 변환할 때 task structure 및 label 정의 참고
--    "대화 속에서 발생하는 주장 검증은 일반 팩트체킹과 다르다"는 근거로 인용 예정
+   -    LexGLUE를 DialFact 형식으로 변환할 때 task structure 및 label 정의 참고
+   -    "대화 속에서 발생하는 주장 검증은 일반 팩트체킹과 다르다"는 근거로 인용 예정
 
 - chalkidis-etal-2022-lexglue
--    실험 데이터셋으로 사용
--    법률 도메인 내 다양한 태스크 성능 비교에 대한 기반 설명으로 활용
+   -    실험 데이터셋으로 사용
+   -    법률 도메인 내 다양한 태스크 성능 비교에 대한 기반 설명으로 활용
 
 - oh-thorne-2023-detrimental
--    문맥 선별이 필요한 이유 설명 시 인용
--    대화 내 전 문맥을 그대로 사용하는 것보다 selective context의 효용성을 정당화
+   -    문맥 선별이 필요한 이유 설명 시 인용
+   -    대화 내 전 문맥을 그대로 사용하는 것보다 selective context의 효용성을 정당화
