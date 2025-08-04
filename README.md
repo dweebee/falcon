@@ -17,12 +17,26 @@
 	- **LexGLUE ECtHR Task A**
 		- 입력:출력 = `text(factual paragraphs)`:`label(1개 이상의 위반된 조항번호로 구성된 리스트)`
 		- LexGLUE는 다양한 법률 NLP 태스크에 대한 벤치마크 데이터셋 모음으로, 여러 법률 분야 과제에 모델을 평가하기 위한 표준 데이터셋을 제공. 
-	- **가명**
+	- **lexdialfact {=lexical dialfact}
 		- 입력:출력 = {context+claim}:{S/R/N}
+  	- claim generation(n: num of art. in labels)
+  		- n>1
+  	 		- Supported: 각 조항번호별 자연어문장 후보 다섯 개중 하나를 random.choice로 선택해서 한문장으로 연결(a,b,...,and,z 식의 문장)
+  	   		- Refuted: 각 조항마다 atomic refuted claim을 n개 생성해서 개별 샘플 생성
+  	       			- (n refuted claims)
+  	     		- NEI: 10개의 조항번호 중, 레이블 내 없는 조항번호로 supported claims 생성시 사용한 자연어 문장후보(조항별 다섯개)를 random.choice로 골라 개별 샘플 생성.
+  	         		- (10-n) NEI claims 생성
+				- (lexglue ecthr task a 데이터는 text내 factual paragraghs 기반으로 판별가능한 위반 조항들을 레이블 내 명시했으므로, 그 외 조항번호들은 text를 기준으로 판별불가능함을 의미하므로 NEI 처리가능)
+		- n==1
+  	 		- Supported: 1개의 NEI claims
+  	   		- Refuted: 1개의 NEI CLAIMS
+  	     		- NEI: 9개의 NEI claims
 - 모델
-	- legalbert: 법률 도메인 사전학습 모델
-- lawcasebert
-	- llama3
+	- 베이스라인
+		- LegalBERT + Sliding-Window: 법률 도메인 사전학습 모델
+			- 판결문 전체를 한 번에 넣을 수 없으니, 토큰 최대 길이 512, stride 256 정도로 슬라이딩 윈도우를 써서 각 윈도우별로 예측을 하고, 그 결과를 통합
+		- lawcasebert
+		- llama3
 
 ### 실험
 1. 환경 설정 및 데이터 준비
