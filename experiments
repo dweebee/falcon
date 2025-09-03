@@ -1,0 +1,11 @@
+[ ] 3 Sep 2025
+    - model: mistral
+    - data: dialfact, valid
+        - premise: evidences, hypothesis: **context(raw)**+claim
+    - inference and check acc & f1
+    - save results
+        - tensorboard, log_files/
+
+[ ] 4  Sep 2025
+    [ ] create Graph-ctx
+    [ ] apply calibration (check default label bias)
