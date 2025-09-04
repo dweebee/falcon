@@ -8,4 +8,8 @@
 
 [ ] 4  Sep 2025
     [ ] create Graph-ctx
+
+[ ] 5 Sep 2025
+    [ ] Apply ARM-graph-context for dialfact inference and check the f1,recall,acc.
+    [ ] check the claim verification with demonstratives which can cause the coref. resolution problems
     [ ] apply calibration (check default label bias)
