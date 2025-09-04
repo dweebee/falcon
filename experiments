@@ -10,6 +10,7 @@
     [ ] create Graph-ctx
 
 [ ] 5 Sep 2025
+    [ ] Convert raw-context to graph-context and Save them (추론할때마다 변환하면 오버헤드 증가..)
     [ ] Apply ARM-graph-context for dialfact inference and check the f1,recall,acc.
     [ ] check the claim verification with demonstratives which can cause the coref. resolution problems
     [ ] Set the separate prompt for rawctx and graphctx
