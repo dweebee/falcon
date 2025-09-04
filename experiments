@@ -12,4 +12,6 @@
 [ ] 5 Sep 2025
     [ ] Apply ARM-graph-context for dialfact inference and check the f1,recall,acc.
     [ ] check the claim verification with demonstratives which can cause the coref. resolution problems
+    [ ] Set the separate prompt for rawctx and graphctx
+    [ ] ARM그래프 직렬화
     [ ] apply calibration (check default label bias)
