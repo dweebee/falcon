@@ -1,3 +1,81 @@
+# RQ1. 대화의 그래프 표현이 실제로 모델의 추론 과정을 도와주는가?
+	기대 효과
+
+	대화 문맥을 그래프로 만들면 지시대명사, 발화 간 참조, 다중 hop 관계가 구조적으로 드러남.
+	
+	모델은 flat한 문장 리스트보다 “노드–엣지 구조”를 통해 더 쉽게 참조 관계를 따라가며 reasoning.
+	
+	실험 아이디어
+	
+	동일한 claim verification 입력에서
+	① raw context (문장 나열),
+	② graph-encoded context (ex. [SPEAKER]–[ENTITY]–[CLAIM]) 비교.
+	
+	내부 추론 과정을 롤아웃 방식으로 분석:
+	
+	Attention rollout (Vig 2019)
+	
+	Path attribution (ex. LRP, Integrated Gradients)
+	
+	Graph tokens ↔ claim tokens 간 attention heatmap.
+	
+	측정 지표(정의 필요)
+	
+	참조 정확도 (coreference resolution accuracy): 모델이 대명사→실제 엔티티를 맞췄는지
+	
+	추론 경로 정합성 (reasoning path alignment): 모델의 attention 경로가 그래프상의 올바른 경로와 얼마나 일치하는지
+	
+	추론 집중도 (reasoning concentration): claim 예측 시 attention이 그래프 핵심 엣지에 집중되는 정도
+
+# RQ2. 대화의 그래프 표현을 입력했을 때 claim verification 성능이 올라가는가?
+	실험 디자인
+
+	데이터셋: DialFact (claim–context 쌍)
+	
+	조건:
+	
+	Evidence + Raw context
+	
+	Evidence + Graph context
+	
+	모델: LegalBERT / LLaMA 계열 비교
+	
+	평가: Accuracy, Macro-F1 (특히 Refuted 클래스)
+	
+	분석 포인트
+	
+	Refuted/NEI에서 지시대명사 참조 실패가 줄어드는가?
+	
+	Multi-hop 문맥(증거 2개 이상 연결)에서 향상되는가?
+	
+	Ablation:
+	
+	Graph에서 coreference edge 제거
+	
+	Graph에서 발화 순서 edge 제거
+	→ 어떤 edge 유형이 성능 향상에 더 기여하는지
+
+시각화 전략
+
+	Attention rollout으로 claim token에서 시작해 graph 노드로 퍼져나가는 경로 시각화.
+	
+	Graph overlay:
+	
+		원문 context의 문장 리스트는 attention map만 보면 흐리지만,
+		
+		Graph context에서는 모델이 claim ↔ entity node ↔ evidence 문장 노드로 attention 흐름을 따라가는 모습이 명확히 드러남.
+		
+	결과: “모델이 실제로 그래프 구조를 따라 추론했다”는 걸 그림으로 보여줄 수 있음.
+
+연구 기여
+
+	대화 문맥의 그래프 표현이 LLM 추론 과정에 실제 도움이 되는지, 롤아웃 분석으로 확인
+	
+	그래프 표현이 claim verification 성능 향상에 기여함을 실험적으로 증명
+	
+	reasoning interpretability 지표 정의 및 시각화 제공
+
+---
 # Pivoting(11 Aug 2025)
 
 <Dialogue Claim Verification: Why We Need Structured Compression of Context (w/ Law as a Testbed)
