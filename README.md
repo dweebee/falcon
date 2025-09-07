@@ -1,4 +1,7 @@
-# On fine-tuning the smller models for reasoning distillation, rewarding mechanism can be applied (such as reinforcemnt learning)
+# 파인튜닝에 '강화학습'
+- 추론능력(지시대명사 참조문제해결 등)을 위해 강화학습 도입
+- On fine-tuning the smller models for reasoning distillation, rewarding mechanism can be applied (such as reinforcemnt learning)
+- RL to Loss(ex.CE) : '추론 능력 함양'을 위한 강화학습의 보상 메커니즘을 손실함수인 CE에 적용해볼것!
 
 # RQ1. 대화의 그래프 표현이 실제로 모델의 추론 과정을 도와주는가?
 	기대 효과
