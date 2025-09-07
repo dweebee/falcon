@@ -1,3 +1,5 @@
+# On fine-tuning the smller models for reasoning distillation, rewarding mechanism can be applied (such as reinforcemnt learning)
+
 # RQ1. 대화의 그래프 표현이 실제로 모델의 추론 과정을 도와주는가?
 	기대 효과
 
